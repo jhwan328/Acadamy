@@ -50,11 +50,15 @@ public class ButtonUI : MonoBehaviour
     {
         if (popUpManager.currentPopupShop == null)
         {
-            popUpManager.currentPopupShop = Instantiate(popUpShopPrefab);
+            GameObject Obj = Instantiate(popUpShopPrefab);
+            popUpManager.currentPopupShop = Obj;
+            Obj.GetComponent<PopUp_Shop>().SetButtonUI(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
             popUpManager.currentPopupShop.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 
