@@ -34,11 +34,15 @@ public class ButtonUI : MonoBehaviour
     {
         if (popUpManager.currentPopupInventory == null)
         {
-            popUpManager.currentPopupInventory = Instantiate(popUpInventoryPrefab);
+            GameObject Obj= Instantiate(popUpInventoryPrefab);
+            popUpManager.currentPopupInventory = Obj;
+            Obj.GetComponent<PopUp_Inventory>().SetButtonUI(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
             popUpManager.currentPopupInventory.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 
