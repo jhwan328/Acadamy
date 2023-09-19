@@ -5,20 +5,15 @@ using UnityEngine;
 public class OpeningSceneManager : MonoBehaviour
 {
     public GameObject PlayerUI;
-    public GameObject ButtonUI;
+    public GameObject PopUpManager;
     public GameObject Character;
 
 
     void Start()
     {
         Instantiate(PlayerUI);
-        Instantiate(ButtonUI);
+        Instantiate(PopUpManager);
         Instantiate(Character);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

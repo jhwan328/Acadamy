@@ -11,7 +11,6 @@ public class StatusSlot : MonoBehaviour
     {
         if (SpriteRenderer != null)
         {
-            Debug.Log("NUll");
             SpriteRenderer.sprite = sprite;
         }
     }
