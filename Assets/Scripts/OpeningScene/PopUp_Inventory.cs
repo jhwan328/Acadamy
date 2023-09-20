@@ -6,15 +6,8 @@ using UnityEngine.UI;
 
 public class PopUp_Inventory : MonoBehaviour
 {
-    //TODO
     private PlayerInfo PlayerInfo;
-    #region
     private ItemStatsManager itemStatsManager;
-    public void SetItemStatesManager(ItemStatsManager itemStatsManager)
-    {
-        this.itemStatsManager = itemStatsManager;
-    }
-    #endregion
     public Transform[] SpawnPoints;
     public GameObject InventorySlotsPrefab;
     private GameObject ButtonUI;
@@ -64,7 +57,10 @@ public class PopUp_Inventory : MonoBehaviour
     {
         this.ButtonUI = ButtonUI;
     }
-
+    public void SetItemStatesManager(ItemStatsManager itemStatsManager)
+    {
+        this.itemStatsManager = itemStatsManager;
+    }
     public void ClickCloseButton()
     {
         foreach (GameObject slot in Slots)

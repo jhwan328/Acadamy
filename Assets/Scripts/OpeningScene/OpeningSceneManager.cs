@@ -19,10 +19,14 @@ public class OpeningSceneManager : MonoBehaviour
 
         ItemStatsManager itemStateManager = Manager1.GetComponent<ItemStatsManager>();
         PopUpManager popUpManager = Manager2.GetComponent<PopUpManager>();
-        PlayerInfo player = Character.GetComponent<PlayerInfo>();
+        PlayerInfo player = Player.GetComponent<PlayerInfo>();
+        PlayerUI playerUI = PlayerUi.GetComponent<PlayerUI>();
 
         popUpManager.SetItemStatesManager(itemStateManager);
         popUpManager.SetPlayerInfo(player);
+        playerUI.SetPlayerInfo(player);
+        playerUI.UpdatrUI();
+        
     }
    
 
