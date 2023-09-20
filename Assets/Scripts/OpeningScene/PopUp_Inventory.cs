@@ -35,6 +35,10 @@ public class PopUp_Inventory : MonoBehaviour
                 item = itemStatsManager.GetItem(inventory[i]);
                 SlotScript = InventorySlot.GetComponent<Slot_Inventory>();
                 SlotScript.ChangeSprite(item.ItemIcon);
+                if(item.isEquiped)
+                {
+                    SlotScript.EuquipUpdate(true);
+                }
             }
             Slots.Add(InventorySlot);
         }
@@ -60,7 +64,6 @@ public class PopUp_Inventory : MonoBehaviour
     {
         this.ButtonUI = ButtonUI;
     }
-
 
     public void ClickCloseButton()
     {
