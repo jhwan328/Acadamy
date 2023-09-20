@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUp_Inventory : MonoBehaviour
 {
+    //TODO
+    public PlayerInfo Player;
+    public ItemStatsManager itemStatsManager;
+
     public Transform[] SpawnPoints;
     public GameObject InventorySlotsPrefab;
     private GameObject ButtonUI;
@@ -12,9 +18,19 @@ public class PopUp_Inventory : MonoBehaviour
     private void Start()
     {
         Slots = new List<GameObject>();
+        int[] inventory = Player.Inventory;
+        Item item;
+        Slot_Inventory SlotScript;
         for (int i = 0; i < SpawnPoints.Length; i++)
         {
             GameObject InventorySlot = Instantiate(InventorySlotsPrefab, SpawnPoints[i].position, Quaternion.identity);
+            //Player Inventory Data
+            if (inventory[i] != 0)
+            {
+                item = itemStatsManager.GetItem(inventory[i]);
+                SlotScript = InventorySlot.GetComponent<Slot_Inventory>();
+                SlotScript.ChangeSprite(item.ItemIcon);
+            }
             Slots.Add(InventorySlot);
         }
         startIsRun = false;

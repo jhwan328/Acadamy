@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0b3b9f8559614399d3f2f3fbc51f9, type: 3}
+  m_Name: 3.Ring_Normal
+  m_EditorClassIdentifier: 
+  ItemNumber: 3
+  Value: 9
+  Price: 100
+  Name: "\uBCF4\uC11D \uBC18\uC9C0"
+  Desc: "\uBC18\uC9C0\uB97C \uB07C\uACE0 \uC8FC\uBA39\uC744 \uC950\uC138\uC694"
+  ItemIcon: {fileID: 21300000, guid: 4be6558bccf5eab4480a1046dffc3342, type: 3}
+  Stack: 1
+  isEquiped: 0
+  Type: 2

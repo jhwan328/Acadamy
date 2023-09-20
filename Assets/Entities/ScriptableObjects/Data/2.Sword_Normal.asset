@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0b3b9f8559614399d3f2f3fbc51f9, type: 3}
+  m_Name: 2.Sword_Normal
+  m_EditorClassIdentifier: 
+  ItemNumber: 2
+  Value: 7
+  Price: 100
+  Name: "\uC7A5\uAC80"
+  Desc: "\uD6CC\uB96D\uD55C \uB300\uD654\uC218\uB2E8!"
+  ItemIcon: {fileID: 21300000, guid: 0285c2a6fb5920940932e2b2da1c6bba, type: 3}
+  Stack: 1
+  isEquiped: 0
+  Type: 0
