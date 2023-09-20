@@ -16,7 +16,7 @@ MonoBehaviour:
   Value: 9
   Price: 80
   Name: "\uBCF4\uC11D \uBC18\uC9C0"
-  Desc: "\uBC18\uC9C0\uB97C \uB07C\uACE0 \uC8FC\uBA39\uC744 \uC950\uC138\uC694"
+  Desc: "\uB07C\uACE0 \uC8FC\uBA39\uC744 \uC950\uC138\uC694"
   ItemIcon: {fileID: 21300000, guid: 4be6558bccf5eab4480a1046dffc3342, type: 3}
   Stack: 1
   isEquiped: 0

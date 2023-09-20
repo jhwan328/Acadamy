@@ -7,8 +7,20 @@ public class ButtonUI : MonoBehaviour
     public GameObject popUpInventoryPrefab;
     public GameObject popUpShopPrefab;
 
-    PopUpManager popUpManager;
+    private PopUpManager popUpManager;
+    private ItemStatsManager itemStatsManager;
 
+    private PlayerInfo playerInfo;
+
+    public void SetPlayerInfo(PlayerInfo playerInfo)
+    {
+        this.playerInfo = playerInfo;
+    }
+
+    public void SetItemStatesManager(ItemStatsManager itemStatsManager)
+    {
+        this.itemStatsManager = itemStatsManager;
+    }
     public void SetManager(PopUpManager Manager)
     {
         popUpManager = Manager;
@@ -36,7 +48,10 @@ public class ButtonUI : MonoBehaviour
         {
             GameObject Obj= Instantiate(popUpInventoryPrefab);
             popUpManager.currentPopupInventory = Obj;
-            Obj.GetComponent<PopUp_Inventory>().SetButtonUI(this.gameObject);
+            PopUp_Inventory popUp_Inventory = Obj.GetComponent<PopUp_Inventory>();
+            popUp_Inventory.SetButtonUI(this.gameObject);
+            popUp_Inventory.SetItemStatesManager(itemStatsManager);
+            popUp_Inventory.SetPlayerInfo(playerInfo);
             this.gameObject.SetActive(false);
         }
         else
@@ -52,7 +67,10 @@ public class ButtonUI : MonoBehaviour
         {
             GameObject Obj = Instantiate(popUpShopPrefab);
             popUpManager.currentPopupShop = Obj;
-            Obj.GetComponent<PopUp_Shop>().SetButtonUI(this.gameObject);
+            PopUp_Shop popUp_Shop = Obj.GetComponent<PopUp_Shop>();
+            popUp_Shop.SetButtonUI(this.gameObject);
+            popUp_Shop.SetItemStatesManager(itemStatsManager);
+            popUp_Shop.SetPlayerInfo(playerInfo);
             this.gameObject.SetActive(false);
         }
         else

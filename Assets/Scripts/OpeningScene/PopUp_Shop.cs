@@ -7,16 +7,13 @@ public class PopUp_Shop : MonoBehaviour
 {
     //TODO
     private List<int> ShopInventory;
-    public ItemStatsManager itemStatsManager;
+    private ItemStatsManager itemStatsManager;
     private ShopItemBar shopItemBar;
-
-    public Transform[] SpawnPoints;
-    public GameObject ShopItemBarPrefab;
+    [SerializeField] public Transform[] SpawnPoints;
+    [SerializeField] public GameObject ShopItemBarPrefab;
     private GameObject ButtonUI;
     private List<GameObject> Bars;
-
-    private Slot_Inventory slotScript;
-
+    private PlayerInfo playerInfo;
     private bool startIsRun = true;
     private void Start()
     {
@@ -71,5 +68,15 @@ public class PopUp_Shop : MonoBehaviour
     public void AddItem(int ItemNumber)
     {
         ShopInventory.Add(ItemNumber);
+    }
+
+    public void SetItemStatesManager(ItemStatsManager itemStatsManager)
+    {
+        this.itemStatsManager = itemStatsManager;
+    }
+
+    public void SetPlayerInfo(PlayerInfo playerInfo)
+    {
+        this.playerInfo = playerInfo;
     }
 }

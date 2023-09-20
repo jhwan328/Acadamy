@@ -7,9 +7,14 @@ using UnityEngine.UI;
 public class PopUp_Inventory : MonoBehaviour
 {
     //TODO
-    public PlayerInfo Player;
-    public ItemStatsManager itemStatsManager;
-
+    private PlayerInfo PlayerInfo;
+    #region
+    private ItemStatsManager itemStatsManager;
+    public void SetItemStatesManager(ItemStatsManager itemStatsManager)
+    {
+        this.itemStatsManager = itemStatsManager;
+    }
+    #endregion
     public Transform[] SpawnPoints;
     public GameObject InventorySlotsPrefab;
     private GameObject ButtonUI;
@@ -18,7 +23,7 @@ public class PopUp_Inventory : MonoBehaviour
     private void Start()
     {
         Slots = new List<GameObject>();
-        int[] inventory = Player.Inventory;
+        int[] inventory = PlayerInfo.Inventory;
         Item item;
         Slot_Inventory SlotScript;
         for (int i = 0; i < SpawnPoints.Length; i++)
@@ -66,5 +71,8 @@ public class PopUp_Inventory : MonoBehaviour
         ButtonUI.SetActive(true);
         this.gameObject.SetActive(false);
     }
-
+    public void SetPlayerInfo(PlayerInfo PlayerInfo)
+    {
+        this.PlayerInfo = PlayerInfo;
+    }
 }

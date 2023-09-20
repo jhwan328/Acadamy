@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class OpeningSceneManager : MonoBehaviour
 {
-    public GameObject PlayerUI;
-    public GameObject PopUpManager;
-    public GameObject Character;
+    [SerializeField] private GameObject PlayerUI;
+    [SerializeField] private GameObject PopUpManager;
+    [SerializeField] private GameObject Character;
+    [SerializeField] private GameObject ItemStateManager;
 
 
-    void Start()
+    void Awake()
     {
-        Instantiate(PlayerUI);
-        Instantiate(PopUpManager);
-        Instantiate(Character);
+        GameObject Manager1=Instantiate(ItemStateManager);
+        GameObject Manager2 = Instantiate(PopUpManager);
+        GameObject PlayerUi = Instantiate(PlayerUI);
+        GameObject Player = Instantiate(Character);
+
+        ItemStatsManager itemStateManager = Manager1.GetComponent<ItemStatsManager>();
+        PopUpManager popUpManager = Manager2.GetComponent<PopUpManager>();
+        PlayerInfo player = Character.GetComponent<PlayerInfo>();
+
+        popUpManager.SetItemStatesManager(itemStateManager);
+        popUpManager.SetPlayerInfo(player);
     }
+   
 
 }
