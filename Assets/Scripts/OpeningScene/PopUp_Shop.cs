@@ -16,7 +16,7 @@ public class PopUp_Shop : MonoBehaviour
     private bool startIsRun = true;
 
     private List<List<GameObject>> Pages;
-    private int currentPageIndex = 0; // 현재 페이지 인덱스
+    private int currentPageIndex = 0; 
 
     private void Start()
     {
@@ -31,9 +31,9 @@ public class PopUp_Shop : MonoBehaviour
         AddItem(10);
 
         Pages = new List<List<GameObject>>();
-        CreatePages(); // 페이지 생성 함수 호출
+        CreatePages(); 
 
-        ShowPage(currentPageIndex); // 시작 시 첫 번째 페이지 보이기
+        ShowPage(currentPageIndex);
 
         startIsRun = false;
     }
@@ -77,13 +77,10 @@ public class PopUp_Shop : MonoBehaviour
 
     private void ShowPage(int pageIndex)
     {
-        // 모든 아이템 숨기기
         foreach (GameObject slot in Bars)
         {
             slot.SetActive(false);
         }
-
-        // 현재 페이지의 아이템 보이기
         List<GameObject> currentPage = Pages[pageIndex];
         foreach (GameObject slot in currentPage)
         {
@@ -91,7 +88,6 @@ public class PopUp_Shop : MonoBehaviour
         }
     }
 
-    // 다음 페이지로 이동하는 함수
     public void NextPage()
     {
         if (currentPageIndex < Pages.Count - 1)
@@ -100,8 +96,6 @@ public class PopUp_Shop : MonoBehaviour
             ShowPage(currentPageIndex);
         }
     }
-
-    // 이전 페이지로 이동하는 함수
     public void PreviousPage()
     {
         if (currentPageIndex > 0)
@@ -111,18 +105,13 @@ public class PopUp_Shop : MonoBehaviour
         }
     }
 
-    // 나머지 메서드는 이전 코드와 동일하게 유지합니다...
-
     private void OnEnable()
     {
         if (!startIsRun)
         {
             if (Bars != null)
             {
-                for (int i = 0; i < Bars.Count; i++)
-                {
-                    Bars[i].SetActive(true);
-                }
+                ShowPage(currentPageIndex);
             }
         }
     }
