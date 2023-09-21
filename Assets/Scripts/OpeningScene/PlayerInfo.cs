@@ -24,19 +24,18 @@ public class PlayerInfo : MonoBehaviour
     public void UpdateGold(int newGold)
     {
         Gold = newGold;
-        PlayerGoldChanged?.Invoke(Gold); // 이벤트 발생
+        PlayerGoldChanged?.Invoke(Gold); 
     }
 
     public void UpdateInventory(Item item)
     {
-        // 빈 인벤토리 슬롯을 찾아서 아이템 번호를 할당합니다.
         for (int i = 0; i < Inventory.Length; i++)
         {
             if (Inventory[i] == 0)
             {
                 Inventory[i] = item.ItemNumber;
                 InventoryChange?.Invoke(item);
-                break; // 빈 슬롯을 찾았으면 루프를 종료합니다.
+                break; 
             }
         }
     }

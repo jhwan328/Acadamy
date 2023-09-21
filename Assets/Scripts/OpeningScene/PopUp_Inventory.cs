@@ -22,13 +22,13 @@ public class PopUp_Inventory : MonoBehaviour
         for (int i = 0; i < SpawnPoints.Length; i++)
         {
             GameObject InventorySlot = Instantiate(InventorySlotsPrefab, SpawnPoints[i].position, Quaternion.identity);
-            //Player Inventory Data
             if (inventory[i] != 0)
             {
                 item = itemStatsManager.GetItem(inventory[i]);
                 SlotScript = InventorySlot.GetComponent<Slot_Inventory>();
                 SlotScript.ChangeSprite(item.ItemIcon);
-                if(item.isEquiped)
+                SlotScript.SetItem(item);
+                if (item.isEquiped)
                 {
                     SlotScript.EuquipUpdate(true);
                 }
@@ -50,7 +50,6 @@ public class PopUp_Inventory : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void SetButtonUI(GameObject ButtonUI)
