@@ -14,6 +14,7 @@ public class PopUp_Shop : MonoBehaviour
     private GameObject ButtonUI;
     private List<GameObject> Bars;
     private PlayerInfo playerInfo;
+
     private bool startIsRun = true;
     private void Start()
     {
@@ -31,6 +32,7 @@ public class PopUp_Shop : MonoBehaviour
             {
                 shopItemBar=ShopItemBar.GetComponent<ShopItemBar>();
                 shopItemBar.UpdateUI(itemStatsManager.GetItem(Cur));
+                shopItemBar.SetPlayerInfo(playerInfo);
             }
             Bars.Add(ShopItemBar);
         }
@@ -79,4 +81,5 @@ public class PopUp_Shop : MonoBehaviour
     {
         this.playerInfo = playerInfo;
     }
+ 
 }

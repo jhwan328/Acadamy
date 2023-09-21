@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StatusSlot : MonoBehaviour
 {
-    public SpriteRenderer SpriteRenderer;
-
+    [SerializeField] private SpriteRenderer SpriteRenderer;
+    [SerializeField] private TextMeshProUGUI StatValue;
+    [SerializeField] private TextMeshProUGUI StatType;
 
     public void SetSprite(Sprite sprite)
     {
@@ -14,4 +16,11 @@ public class StatusSlot : MonoBehaviour
             SpriteRenderer.sprite = sprite;
         }
     }
+    
+    public void UpdateUI(string type, int value)
+    {
+        StatValue.text=value.ToString();
+        StatType.text = type;
+    }
+    
 }

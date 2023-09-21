@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 8154258812987357801}
+  StatValue: {fileID: 8591465868641956337}
+  StatType: {fileID: 4094802325044292987}
 --- !u!1 &6168465220239177977
 GameObject:
   m_ObjectHideFlags: 0

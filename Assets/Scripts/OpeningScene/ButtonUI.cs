@@ -33,6 +33,7 @@ public class ButtonUI : MonoBehaviour
             GameObject Obj= Instantiate(popUpStatusPrefab);
             popUpManager.currentPopupStatus = Obj;
             Obj.GetComponent<PopUp_Status>().SetButtonUI(this.gameObject);
+            Obj.GetComponent<PopUp_Status>().SetPlayerInfo(this.playerInfo);
             this.gameObject.SetActive(false);
         }
         else

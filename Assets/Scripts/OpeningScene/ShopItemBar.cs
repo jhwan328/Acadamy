@@ -12,11 +12,13 @@ public class ShopItemBar : MonoBehaviour
     [SerializeField] private SpriteRenderer ItemIcon;
     [SerializeField] private SpriteRenderer StateIcon;
     [SerializeField] private Sprite[] StateIcons;
-
+    private PlayerInfo playerInfo;
+    private int price;
    public void UpdateUI(Item item)
     {
         ItemName.text = item.Name;
         ItemDesc.text = item.Desc;
+        price = item.Price;
         ItemStatsValue.text = item.Value.ToString();
         ItemPriceValue.text = item.Price.ToString();
         ItemIcon.sprite = item.ItemIcon;
@@ -34,6 +36,27 @@ public class ShopItemBar : MonoBehaviour
             case Item.ItemStatsType.Cri:
                 StateIcon.sprite = StateIcons[3];
                 break;
+        }
+    }
+
+    public void SetPlayerInfo(PlayerInfo playerInfo)
+    {
+        this.playerInfo = playerInfo;
+    }
+
+    public void ClickBuy()
+    {
+        if (playerInfo != null && playerInfo.Gold >= price)
+        {
+            // 아이템을 구매하고 Gold 차감
+            int newGold = playerInfo.Gold - price;
+            playerInfo.UpdateGold(newGold);
+            Debug.Log("Item purchased!");
+        }
+        else
+        {
+            Debug.Log("Not enough Gold!");
+            if (playerInfo == null) Debug.Log("playerInfo is Null");
         }
     }
 }
