@@ -14,8 +14,15 @@ public class ShopItemBar : MonoBehaviour
     [SerializeField] private Sprite[] StateIcons;
     private PlayerInfo playerInfo;
     private int price;
+    private Item item;
+
+    public void SetItem(Item item)
+    {
+        this.item = item;
+    }
    public void UpdateUI(Item item)
     {
+        SetItem(item);
         ItemName.text = item.Name;
         ItemDesc.text = item.Desc;
         price = item.Price;
@@ -51,6 +58,7 @@ public class ShopItemBar : MonoBehaviour
             // 아이템을 구매하고 Gold 차감
             int newGold = playerInfo.Gold - price;
             playerInfo.UpdateGold(newGold);
+            playerInfo.UpdateInventory(item);
         }
         else
         {

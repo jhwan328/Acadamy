@@ -15,6 +15,10 @@ public class Slot_Inventory : MonoBehaviour
     {
         Item = item;
     }
+    public Item GetItem()
+    {
+        return Item;
+    }
     public void ChangeSprite(Sprite sprite)
     {
         this.SpriteRenderer.sprite = sprite;
