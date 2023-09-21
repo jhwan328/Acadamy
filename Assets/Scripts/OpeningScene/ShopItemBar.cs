@@ -51,7 +51,6 @@ public class ShopItemBar : MonoBehaviour
             // 아이템을 구매하고 Gold 차감
             int newGold = playerInfo.Gold - price;
             playerInfo.UpdateGold(newGold);
-            Debug.Log("Item purchased!");
         }
         else
         {
