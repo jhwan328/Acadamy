@@ -12,6 +12,8 @@ public class ShopItemBar : MonoBehaviour
     [SerializeField] private SpriteRenderer ItemIcon;
     [SerializeField] private SpriteRenderer StateIcon;
     [SerializeField] private Sprite[] StateIcons;
+    [SerializeField] private GameObject Buy;
+    [SerializeField] private GameObject Out;
     private PlayerInfo playerInfo;
     private int price;
     private Item item;
@@ -59,6 +61,8 @@ public class ShopItemBar : MonoBehaviour
             int newGold = playerInfo.Gold - price;
             playerInfo.UpdateGold(newGold);
             playerInfo.UpdateInventory(item);
+            Buy.SetActive(false);
+            Out.SetActive(true);
         }
         else
         {
