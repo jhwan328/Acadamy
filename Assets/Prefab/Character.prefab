@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94b4a8b59d4ff3342bf614da72ca0d41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,3 +98,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: 010000000200000003000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Level: 9
+  MaxExp: 100
+  CurrentExp: 80
+  Hp: 200
+  Atk: 10
+  Def: 10
+  Cri: 10
+  Gold: 3000
+  Name: AAB
+  Title: Powerful
+  Desc: "\uC704\uB300\uD55C \uBAA8\uD5D8\uC744 \uAFC8\uAFB8\uB294 \uAE30\uC0AC"
