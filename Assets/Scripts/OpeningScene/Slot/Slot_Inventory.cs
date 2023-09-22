@@ -23,10 +23,15 @@ public class Slot_Inventory : MonoBehaviour
     {
         this.SpriteRenderer.sprite = sprite;
     }
-    public void EuquipUpdate(bool isEquied)
+    public void EuquipUpdate()
     {
-        if (isEquied) EquipIcon.SetActive(true);
-        else EquipIcon.SetActive(false);
+        if (Item.isEquiped && EquipIcon != null)
+        {
+            EquipIcon.SetActive(true);
+        }
+        else { 
+            EquipIcon.SetActive(false); 
+        }
     }
 
     public void ClickSprite()

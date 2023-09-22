@@ -11,6 +11,8 @@ public class PopUp_Equip : MonoBehaviour
     [SerializeField] private SpriteRenderer ItemSprite;
     [SerializeField] private SpriteRenderer StatSprite;
     [SerializeField] private Sprite[] StatIcon;
+    [SerializeField] private GameObject EquipIcon;
+    [SerializeField] private GameObject UnEquipIcon;
     private Item item;
 
     public void SetItem(Item item)
@@ -24,6 +26,12 @@ public class PopUp_Equip : MonoBehaviour
         ItemDesc.text = item.Desc;
         StatValue.text = item.Value.ToString();
         ItemSprite.sprite = item.ItemIcon;
+        if(item.isEquiped)
+        {
+            UnEquipIcon.SetActive(true); 
+            EquipIcon.SetActive(false);
+        }
+
         switch(item.Type)
         {
             case Item.ItemStatsType.Hp:
@@ -46,5 +54,18 @@ public class PopUp_Equip : MonoBehaviour
     public void ClickCloseButton()
     {
         Destroy(this.gameObject);
+    }
+
+    public void ClickEquipButton()
+    {
+        item.isEquiped = true;
+        UnEquipIcon.SetActive(true);
+        EquipIcon.SetActive(false);
+    }
+    public void ClickUnEquipButton()
+    {
+        item.isEquiped = false;
+        EquipIcon.SetActive(true);
+        UnEquipIcon.SetActive(false);
     }
 }

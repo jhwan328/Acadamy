@@ -19,5 +19,5 @@ MonoBehaviour:
   Desc: "\uC544\uBB34 \uD2B9\uC9D5 \uC5C6\uB294 \uADF8\uB0E5 \uD22C\uAD6C "
   ItemIcon: {fileID: 21300000, guid: 1c0bd2bea6c6dcb4cb574b88922d0f9f, type: 3}
   Stack: 1
-  isEquiped: 0
+  isEquiped: 1
   Type: 1

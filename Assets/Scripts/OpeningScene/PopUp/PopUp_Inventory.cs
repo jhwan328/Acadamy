@@ -29,10 +29,7 @@ public class PopUp_Inventory : MonoBehaviour
                 SlotScript = InventorySlot.GetComponent<Slot_Inventory>();
                 SlotScript.ChangeSprite(item.ItemIcon);
                 SlotScript.SetItem(item);
-                if (item.isEquiped)
-                {
-                    SlotScript.EuquipUpdate(true);
-                }
+                SlotScript.EuquipUpdate();
             }
             Slots.Add(InventorySlot);
         }
@@ -51,6 +48,7 @@ public class PopUp_Inventory : MonoBehaviour
                 for (int i = 0; i < Slots.Count; i++)
                 {
                     Slots[i].SetActive(true);
+                    Slots[i].GetComponent<Slot_Inventory>().EuquipUpdate();
                 }
             }
         }
@@ -93,7 +91,7 @@ public class PopUp_Inventory : MonoBehaviour
                 SlotScript.SetItem(item);
                 if (item.isEquiped)
                 {
-                    SlotScript.EuquipUpdate(true);
+                    SlotScript.EuquipUpdate();
                 }
                 break;
             }
